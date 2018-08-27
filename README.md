@@ -73,43 +73,43 @@ Publish packages with lerna to update versions properly across local packages, [
     npx lerna publish
 
 ### Insert Mode
-|Command | Desc |
-|--------|------|
-| `a` | Moves the cursor after the current character and enters insert mode |
-| `A` | Moves the cursor to the end of the line and enters insert mode |
-| `i (ins)` | Switches to insert mode |
-| `I` | Moves the cursor to the beginning of the line and enters insert mode |
-| `o` | Inserts a new line below the current line and enters insert mode on the new line |
-| `O` | Inserts a new line above the current one and enters insert mode on the new line |
+|Command         | Desc                                                                                   |
+|----------------|----------------------------------------------------------------------------------------|
+| `a`            | Moves the cursor after the current character and enters insert mode                    |
+| `A`            | Moves the cursor to the end of the line and enters insert mode                         |
+| `i (ins)`      | Switches to insert mode                                                                |
+| `I`            | Moves the cursor to the beginning of the line and enters insert mode                   |
+| `o`            | Inserts a new line below the current line and enters insert mode on the new line       |
+| `O`            | Inserts a new line above the current one and enters insert mode on the new line        |
 
 ### Normal Mode
-|Command | Desc |
-|--------|------|
-| `esc (ctrl-[)` | enter Normal Mode |
-| `l (right)` | Move forward |
-| `h (left)` | Move backward |
-| `j (down)` | Move to the next line |
-| `k (up)` | Move to the previous line |
-| `0` | Move to the beginning of line |
-| `$` | Move to the end of line |
-| `b` | Move to previous beginning of word |
-| `e` | Move to end of word |
+|Command         | Desc                                                                                   |
+|----------------|----------------------------------------------------------------------------------------|
+| `esc (ctrl-[)` | enter Normal Mode                                                                      |
+| `l (right)`    | Move forward                                                                           |
+| `h (left)`     | Move backward                                                                          |
+| `j (down)`     | Move to the next line                                                                  |
+| `k (up)`       | Move to the previous line                                                              |
+| `0`            | Move to the beginning of line                                                          |
+| `$`            | Move to the end of line                                                                |
+| `b`            | Move to previous beginning of word                                                     |
+| `e`            | Move to end of word                                                                    |
 
 ### Visual Mode
-|Command | Desc |
-|--------|------|
-| `v` | enter Visual Mode, this will also mark a starting selection point |
-| `l (right)` | Select forward |
-| `h (left)` | Select backward |
-| `k (up)` | Select up |
-| `j (down)` | Select down |
+|Command         | Desc                                                                                   |
+|----------------|----------------------------------------------------------------------------------------|
+| `v`            | enter Visual Mode, this will also mark a starting selection point                      |
+| `l (right)`    | Select forward                                                                         |
+| `h (left)`     | Select backward                                                                        |
+| `k (up)`       | Select up                                                                              |
+| `j (down)`     | Select down                                                                            |
 
 Move the cursor to the desired end selection point; vi will provide a visual highlight of the text selection
 
 ### Visual Line Mode
-|Command | Desc |
-|--------|------|
-| `V` | select current line and enter Visual Line Mode, this will make text selections by line |
-| `k (up)` | select line up |
-| `j (down)` | select line down |
-| `d` | delete selected lines |
+|Command         | Desc                                                                                   |
+|----------------|----------------------------------------------------------------------------------------|
+| `V`            | select current line and enter Visual Line Mode, this will make text selections by line |
+| `k (up)`       | select line up                                                                         |
+| `j (down)`     | select line down                                                                       |
+| `d`            | delete selected lines                                                                  |
