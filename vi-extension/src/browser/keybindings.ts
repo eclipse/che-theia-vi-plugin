@@ -10,6 +10,14 @@
 
 import { Keybinding } from "@theia/core/lib/browser";
 import { injectable } from "inversify";
+import { NormalModeCommands } from "./mode/normal-mode";
+import { ViModeKeybindingContexts } from "./mode/mode-context";
+import NORMAL_MODE_CONTEXT = ViModeKeybindingContexts.normalModeActive;
+import VISUAL_MODE_CONTEXT = ViModeKeybindingContexts.visualModeActive;
+import VISUAL_LINE_MODE_CONTEXT = ViModeKeybindingContexts.visualLineModeActive;
+import SWITCH_VI_MODE_CONTEXT = ViModeKeybindingContexts.switchMode;
+import { VisualModeCommands, VisualLineModeCommands } from "./mode/visual-mode";
+import { SwitchModeCommands } from "./mode/switch-mode";
 
 @injectable()
 export class ViKeyBindings {
@@ -21,225 +29,225 @@ export class ViKeyBindings {
             /*** Normal Mode ***/
 
             {
-                command: 'normal.mode.cursor.left',
+                command: NormalModeCommands.CURSOR_LEFT.id,
                 keybinding: "h",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.right',
+                command: NormalModeCommands.CURSOR_RIGHT.id,
                 keybinding: "l",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.up',
+                command: NormalModeCommands.CURSOR_UP.id,
                 keybinding: "k",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.down',
+                command: NormalModeCommands.CURSOR_DOWN.id,
                 keybinding: "j",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.left',
+                command: NormalModeCommands.CURSOR_LEFT.id,
                 keybinding: "left",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.right',
+                command: NormalModeCommands.CURSOR_RIGHT.id,
                 keybinding: "right",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.up',
+                command: NormalModeCommands.CURSOR_UP.id,
                 keybinding: "up",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.down',
+                command: NormalModeCommands.CURSOR_DOWN.id,
                 keybinding: "down",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.home',
+                command: NormalModeCommands.CURSOR_HOME.id,
                 keybinding: "0",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.end',
+                command: NormalModeCommands.CURSOR_END.id,
                 keybinding: "shift+4", // $
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.word.start.left',
+                command: NormalModeCommands.CURSOR_WORD_START_LEFT.id,
                 keybinding: "b",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             {
-                command: 'normal.mode.cursor.word.end.right',
+                command: NormalModeCommands.CURSOR_WORD_END_RIGHT.id,
                 keybinding: "e",
-                context: 'viNormalModeActive'
+                context: NORMAL_MODE_CONTEXT
             },
 
             /*** Visual Mode ***/
 
             {
-                command: 'visual.mode.select.right',
+                command: VisualModeCommands.SELECT_RIGHT.id,
                 keybinding: "right",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.right',
+                command: VisualModeCommands.SELECT_RIGHT.id,
                 keybinding: "l",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.left',
+                command: VisualModeCommands.SELECT_LEFT.id,
                 keybinding: "left",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.left',
+                command: VisualModeCommands.SELECT_LEFT.id,
                 keybinding: "h",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.up',
+                command: VisualModeCommands.SELECT_UP.id,
                 keybinding: "up",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.up',
+                command: VisualModeCommands.SELECT_UP.id,
                 keybinding: "k",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.down',
+                command: VisualModeCommands.SELECT_DOWN.id,
                 keybinding: "down",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             {
-                command: 'visual.mode.select.down',
+                command: VisualModeCommands.SELECT_DOWN.id,
                 keybinding: "j",
-                context: 'viVisualModeActive'
+                context: VISUAL_MODE_CONTEXT
             },
 
             /*** Visual Line Mode ***/
 
             {
-                command: 'visual.line.mode.select.up',
+                command: VisualLineModeCommands.SELECT_UP.id,
                 keybinding: "up",
-                context: 'viVisualLineModeActive'
+                context: VISUAL_LINE_MODE_CONTEXT
             },
 
             {
-                command: 'visual.line.mode.select.up',
+                command: VisualLineModeCommands.SELECT_UP.id,
                 keybinding: "k",
-                context: 'viVisualLineModeActive'
+                context: VISUAL_LINE_MODE_CONTEXT
             },
 
             {
-                command: 'visual.line.mode.select.down',
+                command: VisualLineModeCommands.SELECT_DOWN.id,
                 keybinding: "j",
-                context: 'viVisualLineModeActive'
+                context: VISUAL_LINE_MODE_CONTEXT
             },
 
             {
-                command: 'visual.line.mode.select.down',
+                command: VisualLineModeCommands.SELECT_DOWN.id,
                 keybinding: "down",
-                context: 'viVisualLineModeActive'
+                context: VISUAL_LINE_MODE_CONTEXT
             },
 
             {
-                command: 'visual.line.mode.delete',
+                command: VisualLineModeCommands.DELETE_SELECTED.id,
                 keybinding: "d",
-                context: 'viVisualLineModeActive'
+                context: VISUAL_LINE_MODE_CONTEXT
             },
 
             /*** Switching vi mode ***/
 
             {
-                command: 'vi.switch.to.normalMode',
+                command: SwitchModeCommands.NORMAL_MODE.id,
                 keybinding: "esc",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.normalMode',
+                command: SwitchModeCommands.NORMAL_MODE.id,
                 keybinding: "ctrl+[",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.visualMode',
+                command: SwitchModeCommands.VISUAL_MODE.id,
                 keybinding: "v",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.visualLineMode',
+                command: SwitchModeCommands.VISUAL_LINE_MODE.id,
                 keybinding: "shift+v",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.cursorBefore',
+                command: SwitchModeCommands.INSERT_MODE_CURSOR_BEFORE.id,
                 keybinding: "i",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.cursorBefore',
+                command: SwitchModeCommands.INSERT_MODE_CURSOR_BEFORE.id,
                 keybinding: "ins",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.cursorAfter',
+                command: SwitchModeCommands.INSERT_MODE_CURSOR_AFTER.id,
                 keybinding: "a",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.newLineBelow',
+                command: SwitchModeCommands.INSERT_MODE_NEW_LINE_BELOW.id,
                 keybinding: "o",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.cursorHome',
+                command: SwitchModeCommands.INSERT_MODE_CURSOR_HOME.id,
                 keybinding: "shift+i",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.cursorEnd',
+                command: SwitchModeCommands.INSERT_MODE_CURSOR_END.id,
                 keybinding: "shift+a",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             },
 
             {
-                command: 'vi.switch.to.insertMode.newLineAbove',
+                command: SwitchModeCommands.INSERT_MODE_NEW_LINE_ABOVE.id,
                 keybinding: "shift+o",
-                context: 'switchViMode'
+                context: SWITCH_VI_MODE_CONTEXT
             }
         ];
     }
